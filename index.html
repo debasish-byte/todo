@@ -8,18 +8,82 @@
 </head>
 <body>
   <div class="container">
-     <div class="head">
-        <h1>My TODO 🗒️</h1>
-        <h2>Hello User 👋🏻</h2>
-     </div>
-     <div class="input">
-      <input type="text" name="addBar" id="addBar" placeholder="Add a new task...">
-      <button onclick="addTask()">Add</button>
-     </div>
-     <div class="list">
-      <ul><li></li></ul>
-     </div>
+    <div class="head">
+      <h1>My TODO</h1>
+      <h2>Hello User</h2>
+    </div>
+    <div class="category">
+      <div class="ctg personal">Personal</div>
+      <div class="ctg work">Work</div>
+      <div class="ctg study">Study</div>
+      <div class="ctg health">Health</div>
+      <div class="ctg gym">Gym</div>
+      <div class="ctg other">Other</div>
+    </div>
+    <div class="task personal hidden">
+      <h1>Personal</h1>
+      <div class="input">
+        <input type="text" id="addBar-personal" placeholder="Add a new task...">
+        <button onclick="addTask('personal')">Add</button>
+      </div>
+      <div class="list">
+        <ul></ul>
+      </div>
+    </div>
+    <div class="task work hidden">
+        <h1>Work</h1>
+      <div class="input">
+        <input type="text" id="addBar-work" placeholder="Add a new task...">
+        <button onclick="addTask('work')">Add</button>
+      </div>
+      <div class="list">
+        <ul></ul>
+      </div>
+    </div>
+    <div class="task study hidden">
+      <h1>Study</h1>
+      <div class="input">
+        <input type="text" id="addBar-study" placeholder="Add a new task...">
+        <button onclick="addTask('study')">Add</button>
+      </div>
+      <div class="list">
+        <ul></ul>
+      </div>
+    </div>
+    <div class="task health hidden">
+      <h1>Health</h1>
+      <div class="input">
+        <input type="text" id="addBar-health" placeholder="Add a new task...">
+        <button onclick="addTask('health')">Add</button>
+      </div>
+      <div class="list">
+        <ul></ul>
+      </div>
+    </div>
+    <div class="task gym hidden">
+      <h1>Gym</h1>
+      <div class="input">
+        <input type="text" id="addBar-gym" placeholder="Add a new task...">
+        <button onclick="addTask('gym')">Add</button>
+      </div>
+      <div class="list">
+        <ul></ul>
+      </div>
+    </div>
+    <div class="task other hidden">
+      <h1>Other</h1>
+      <div class="input">
+        <input type="text" id="addBar-other" placeholder="Add a new task...">
+        <button onclick="addTask('other')">Add</button>
+      </div>
+      <div class="list">
+        <ul></ul>
+      </div>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
 </html>
+
+
+    

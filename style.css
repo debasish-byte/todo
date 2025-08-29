@@ -2,68 +2,161 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
-.container{
-    width: 100%;
-    min-height: 100vh;
+
+body{
     display: flex;
-    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container{
+    background-color: #fffde7;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 18px;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 .head{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    top: 5rem;
-    left: 44%;
-    gap: 1rem;
+    text-align: center;
 }
+
+.head h1{
+    font-size: 36px;
+    color: #232323dd;
+    margin-bottom: 10px;
+}
+
+.head h2{
+    font-size: 24px;
+    color: #232323dd;
+    margin-bottom: 20px;
+}
+
+.category{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.ctg{
+    padding: 12px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s, box-shadow 0.2s;
+}
+
+.ctg:hover{
+    opacity: 1;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+}
+
+.ctg.personal { background-color: #dbeafe; color: #1e40af; }
+.ctg.work { background-color: #dcfce7; color: #166534; }
+.ctg.study { background-color: #ede9fe; color: #5b21b6; }
+.ctg.health { background-color: #fee2e2; color: #991b1b; }
+.ctg.gym { background-color: #fef9c3; color: #854d0e; }
+.ctg.other { background-color: #e5e7eb; color: #4b5563; }
+
+.task{
+    display: none;
+}
+
+.task.hidden{
+    display: none;
+}
+
+.task:not(.hidden){
+    display: block;
+}
+
+.task h1{
+    font-size: 1.4rem;
+    color: #232323dd;
+    margin-bottom: 12px;
+}
+
 .input{
     display: flex;
-    align-items: center;
-    position: relative;
-    top: -7rem;
-    left: 26%;
+    gap: 10px;
+    margin-bottom: 14px;
 }
 
-input{
-    width: 20rem;
-    padding: 12px;
-    border-radius: 20px; ;
-    border: none;
+.input input{
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #979797;
+    border-radius: 12px;
+    font-size: 16px;
     outline: none;
-    background-color: #eeeaea;
 }
 
-button{
-    padding: 12px;
+.input input:focus{
+    border-color: #222222dc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.input button{
+    padding: 10px 16px;
     border: none;
-    outline: none;
-    border-radius: 20px;
-    background-color: #fe8a31;
-    color: #ffffff;
-    width: 6rem;
+    border-radius: 12px;
+    color: #e7f6fa;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-.list{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: -1rem;
-}
+.task.personal .input button { background-color: #3b82f6; }
+.task.personal .input button:hover { background-color: #2563eb; }
+.task.work .input button { background-color: #22c55e; }
+.task.work .input button:hover { background-color: #16a34a; }
+.task.study .input button { background-color: #8b5cf6; }
+.task.study .input button:hover { background-color: #7c3aed; }
+.task.health .input button { background-color: #ef4444; }
+.task.health .input button:hover { background-color: #dc2626; }
+.task.gym .input button { background-color: #eab308; }
+.task.gym .input button:hover { background-color: #ca8a04; }
+.task.other .input button { background-color: #6b7280; }
+.task.other .input button:hover { background-color: #4b5563; }
+
 .list ul{
     list-style: none;
-    outline: none;
-    border: none;
 }
-.list ul li{
-    padding: 0.7rem;
+
+.list li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #b2b7b833;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    color: #1f1f1f;
     cursor: pointer;
     position: relative;
+    width: 92%;
+    left: 2.5rem;
 }
+
+.delete{
+    position: absolute;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    right: 1rem;
+}
+
+.delete:hover{
+    filter: brightness(0.7);
+}
+
 ul li::before{
     content: '';
     position: absolute;
@@ -73,30 +166,23 @@ ul li::before{
     background-image: url(assests/rectangle.png);
     background-size: cover;
     background-position: center;
-    top: 8px;
-    left: -24px;
+    left: -2rem;
 }
 
 ul li.checked{
     text-decoration: line-through;
-    color: #797878;
+    color: #414141d5;
 }
 ul li.checked::before{
     background-image: url(assests/square.png);
 }
 
-.delete{
-    position: absolute;
-    right: -20rem;
-    top: 4px;
-    padding: 0.5rem;
-    cursor: pointer;
-    width: 35px;
-    height: 35px;
+@media(max-width: 400px){
+    .list li{
+        width: 80%;
+    }
 }
 
-.delete:hover{
-    background-color: #dbd6d4;
-    border-radius: 25%;
-}
+
+
 
